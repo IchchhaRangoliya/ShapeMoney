@@ -1,0 +1,66 @@
+{% extends 'app/header.html' %}
+{% block content %}
+			<!-- Banner @s -->
+			<div class="header-banner bg-theme-grad">
+				<div class="nk-banner">
+				    <div class="banner banner-page">
+				        <div class="banner-wrap">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-6 col-lg-9">
+                                        <div class="banner-caption cpn tc-light text-center">
+                                            <div class="cpn-head">
+                                                <h2 class="title ttu">Gold Historical Rates </h2>
+                                                <p>Gold was generally used for a couple thousand years solely to create things such as jewelry and idols for worship.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+				    </div>
+				</div><!-- .nk-banner -->
+				<div class="nk-ovm shape-a-sm"></div>
+			</div>
+			<!-- .header-banner @e -->
+		</header>
+    
+        <main class="nk-pages">
+            <section class="section bg-white">
+                <div class="container">
+                    <div class="row justify-content-around">
+                        <div class="col-lg-5 mgb-r">
+                            <h3 class="title title title-md">Gold Historical Rates</h3>
+                            
+                            <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Return</th>
+                                   
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% if data %}
+                                    {% for i in data %}
+                                  <tr>
+                                    <th scope="row">{{i.id}}</th>
+                                    <td>{{i.years}}</td>
+                                    <td>{{i.returns}}</td>
+                                    
+                                  </tr>
+                                  {% endfor %}
+                                  {% endif %}
+                                  
+                                </tbody>
+                              </table>
+                              
+                              
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+{% endblock %}
